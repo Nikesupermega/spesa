@@ -41,7 +41,7 @@ h1{
 
 #form input,
 #form button{
-  font-size: 1.4rem;
+  font-size: 2rem;
   padding: 16px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -103,3 +103,4 @@ li button{
     flex: 1;
   }
 }
+
