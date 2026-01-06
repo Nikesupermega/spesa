@@ -2,29 +2,22 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Lista Spesa</title>
+  <title>Utilità</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark">
+  <div>
+    <h1>Utilità</h1>
+  </div>
+  <div id="d-btn">
+    <button onclick="window.location.href='spesa/spesa.html'" class="btn">Spesa</button>
+    <button onclick="window.location.href='rubrica/rubrica.html'" class="btn">Contatti</button>
+  </div>
+  <div>
 
-  <h1>🛒 Lista Spesa</h1>
-
-    <div id="form">
-  <label>
-    Prodotto
-    <input type="text" id="prodotto" placeholder="Es. Latte">
-  </label>
-
-  <label>
-    Quantità
-    <input type="number" id="quantita" min="1" value="1">
-  </label>
-
-  <button class="add-btn" onclick="aggiungi()">Aggiungi</button>
-</div>
-
+  </div>
   
-  <ul id="lista"></ul>
+
 
   <script src="script.js"></script>
 </body>
