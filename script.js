@@ -30,10 +30,19 @@ function mostraLista() {
     testo.className = "item-text";
 
     const btn = document.createElement("button");
+    const piu = document.createElement("button");
+    const meno = document.createElement("button");
+    meno.textContent = "➖"
+    piu.textContent = "➕"
     btn.textContent = "❌";
+
     btn.onclick = () => rimuovi(index);
+    piu.onclick = () => plus(index);
+    meno.onclick = () => minus(index);
 
     li.appendChild(testo);
+    li.appendChild(meno);
+    li.appendChild(piu);
     li.appendChild(btn);
     ul.appendChild(li);
   });
@@ -44,6 +53,21 @@ function rimuovi(index) {
   salva();
   mostraLista();
 }
+
+function plus(index){
+  listaSpesa[index].qty += 1;
+  salva();
+  mostraLista();
+}
+
+function minus(index){
+  if (listaSpesa[index].qty > 1) {
+    listaSpesa[index].qty -= 1;
+  }
+  salva();
+  mostraLista();
+}
+
 
 function salva() {
   localStorage.setItem("listaSpesa", JSON.stringify(listaSpesa));

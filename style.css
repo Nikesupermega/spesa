@@ -73,6 +73,7 @@ h1{
     padding: 10px 12px;
     color: var(--text);
     font-size: 1rem;
+    margin-left: 10px;
 }
 
 #form input{
@@ -87,9 +88,22 @@ h1{
 ul{
     background-color: var(--surface);
     padding: 18px;
-    border-radius: calc(var(--radius) * 2);
+    border-radius: 20px;
     list-style: none;
     box-shadow: var(--shadow);
+    border-color: var(--muted);
+    border-width: 2px;
+}
+
+li button{
+    background-color: var(--surface);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    color: var(--text);
+    font-size: 1rem;
+    cursor: pointer;
+
 }
 
 ul li{
