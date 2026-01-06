@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista Spesa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+  <h1>🛒 Lista Spesa</h1>
+
+    <div id="form">
+        <input type="text" id="prodotto" placeholder="Es. latte" aria-label="Nome prodotto">
+        <input id="quantita" type="number" min="1" value="1">
+        <button class="add-btn" onclick="aggiungi()" aria-label="Aggiungi prodotto">Aggiungi</button>
+    </div>
+  
+  <ul id="lista"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
