@@ -1,182 +1,105 @@
-
-
-/* Prefer user's OS theme: use dark variables when requested */
-@media (prefers-color-scheme: dark){
-    :root{
-        --bg: #071126;
-        --surface: #0b1220;
-        --text: #e6eef8;
-        --muted: #94a3b8;
-        --accent: #3b82f6;
-        --accent-rgb: 59,130,246;
-        --border: rgba(255,255,255,0.06);
-        --shadow: 0 1px 2px rgba(2,6,23,0.28);
-    }
+:root{
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --text: #0f1724;
+  --border: rgba(0,0,0,0.15);
+  --radius: 16px;
 }
 
-/* Allow explicit override via `.dark` class on body */
+/* dark manuale */
 body.dark{
-    --bg: #071126;
-    --surface: #0b1220;
-    --text: #e6eef8;
-    --muted: #94a3b8;
-    --accent: #3b82f6;
-    --accent-rgb: 59,130,246;
-    --border: rgba(255,255,255,0.06);
-    --shadow: 0 1px 2px rgba(2,6,23,0.28);
+  --bg: #071126;
+  --surface: #0b1220;
+  --text: #e6eef8;
+  --border: rgba(255,255,255,0.15);
 }
 
-*,
-*::before,
-*::after{
-    box-sizing: border-box;
-}
-
-html, body{
-    height: 100%;
-}
-
-
+*{ box-sizing: border-box; }
 
 body{
-    margin: 20px auto;
-    max-width: 900px;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    line-height: 1.45;
-    -webkit-font-smoothing:antialiased;
-    background-color: var(--bg);
-    color: var(--text);
-    transition: background-color 240ms ease, color 240ms ease;
+  margin: 0;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
+/* TITOLO */
 h1{
-    font-size: clamp(1.6rem, 4vw, 2.8rem);
-    color: var(--text);
-    margin-bottom: 0.5rem;
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 24px;
 }
 
-/* Form styles */
+/* FORM */
 #form{
-    margin: 16px 0 24px 0;
-    display: flex;
-
-    gap: var(--gap);
-    flex-wrap: wrap;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
 }
 
 #form input,
-#form .add-btn{
-    background-color: var(--surface);
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    padding: 10px 12px;
-    color: var(--text);
-    font-size: 1rem;
-    margin-left: 10px;
+#form button{
+  font-size: 1.4rem;
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
 }
 
-#form input{
-    flex: 1 1 220px;
-}
-
-#form .add-btn{
-    cursor: pointer;
-}
-
-li{
-    display: flex;
-}
-
-/* List container */
+/* LISTA */
 ul{
-    background-color: var(--surface);
-    padding: 18px;
-    border-radius: 20px;
-    list-style: none;
-    box-shadow: var(--shadow);
-    border-color: var(--muted);
-    border-width: 2px;
-}
-
-li button{
-    background-color: var(--surface);
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    padding: 10px 12px;
-    color: var(--text);
-    font-size: 1rem;
-    cursor: pointer;
-
+  list-style: none;
+  padding: 16px;
+  margin: 0;
+  border-radius: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
 }
 
 ul li{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 8px 6px;
-    font-size: clamp(1rem, 2.6vw, 1.5rem);
-    border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 8px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--border);
 }
 
-ul li:last-child{ border-bottom: none; }
-
-ul li .item-text{
-    flex: 1 1 auto;
-    margin-right: 8px;
+ul li:last-child{
+  border-bottom: none;
 }
 
-/* Buttons inside list */
-ul li .list-btn{
-    background-color: transparent;
-    margin-left: 12px;
-    border: 1px solid var(--border);
-    padding: 8px 12px;
-    font-size: 0.95rem;
-    border-radius: var(--radius);
-    cursor: pointer;
-    color: var(--text);
-    transition: background-color 180ms ease, border-color 180ms ease;
+/* TESTO */
+.item-text{
+  flex: 1;
+  font-weight: 500;
 }
 
-ul li .list-btn:hover{
-    background-color: rgba(var(--accent-rgb),0.06);
-    border-color: rgba(var(--accent-rgb),0.28);
+/* BOTTONI */
+li button{
+  font-size: 1.6rem;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
 }
 
-#quantita{
-    margin-left: 20px;
-}
+/* DESKTOP */
+@media (min-width: 800px){
+  body{
+    max-width: 900px;
+    margin: auto;
+  }
 
-/* Theme toggle button */
-#mode{
-    background: var(--surface);
-    color: var(--text);
-    border: 1px solid var(--border);
-    padding: 6px 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.05rem;
-    vertical-align: middle;
-    margin-left: 12px;
-}
+  #form{
+    flex-direction: row;
+  }
 
-/* Focus for accessibility */
-:is(button, input):focus-visible{
-    outline: 3px solid rgba(var(--accent-rgb), 0.35);
-    outline-offset: 2px;
-}
-
-/* Reduce motion preference */
-@media (prefers-reduced-motion: reduce){
-    *{ transition: none !important; }
-}
-
-/* Small screens */
-@media (max-width: 600px){
-    body{ margin: 12px; }
-    #form{ gap: 8px; }
-    ul{ padding: 12px; }
-    ul li{ font-size: 1rem; }
+  #form input{
+    flex: 1;
+  }
 }
