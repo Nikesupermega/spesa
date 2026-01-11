@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista Spesa</title>
+  <link rel="stylesheet" href="spesa.css">
+</head>
+<body class="dark">
+
+  <h1>🛒 Lista Spesa</h1>
+
+    <div id="form">
+  <label>
+    Prodotto
+    <input type="text" id="prodotto" placeholder="Es. Latte">
+  </label>
+
+  <label>
+    Quantità
+    <input type="number" id="quantita" min="1" value="1">
+  </label>
+
+  <button class="add-btn" onclick="aggiungi()">Aggiungi</button>
+</div>
+
+  
+  <ul id="lista"></ul>
+
+  <script src="spesa.js"></script>
+</body>
+</html>
